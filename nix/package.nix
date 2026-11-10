@@ -52,7 +52,7 @@ let
   pname = "terminal-browser";
   version = (lib.importJSON ../browser/package.json).version;
 
-  electronVersion = "44.2.0";
+  electronVersion = "44.5.1";
 
   electronTarget =
     {
@@ -66,25 +66,25 @@ let
 
   electronHashes = {
     linux-x64 = {
-      zip = "sha256-Scc8koBNopPHX/fkFGmnUT0CF6TTczIFSXcHXrQmFdk=";
-      marker = "49c73c92804da293c75ff7e41469a7513d0217a4d37332054977075eb42615d9";
+      zip = "sha256-cJ1IFvznDNCxqu4BRAbn72S2JGNjGOc0+qDQddNGBpw=";
+      marker = "709d4816fce70cd0b1aaee014406e7ef64b624636318e734faa0d075d346069c";
     };
     linux-arm64 = {
-      zip = "sha256-wnb1Toia7p7xSmKPnr4vp0pzTBzrN2NyIErDQG+l418=";
-      marker = "c276f54e889aee9ef14a628f9ebe2fa74a734c1ceb376372204ac3406fa5e35f";
+      zip = "sha256-mue0vHQFxk/qIv/iMq2RqtDBa2dJUcZqs8kyOachJKw=";
+      marker = "9ae7b4bc7405c64fea22ffe232ad91aad0c16b674951c66ab3c93239a72124ac";
     };
     darwin-arm64 = {
-      zip = "sha256-U7B3Hj5JUTtvEH2zIKjEvWcCXuKFdge4NSeqrjQoTsA=";
-      marker = "53b0771e3e49513b6f107db320a8c4bd67025ee2857607b83527aaae34284ec0";
+      zip = "sha256-aK+pHphkLUhcRSsL7G5mxkByyVRsQCM6bFoc686UxMY=";
+      marker = "68afa91e98642d485c452b0bec6e66c64072c9546c40233a6c5a1cebce94c4c6";
     };
     darwin-x64 = {
-      zip = "sha256-hdizziBQX28F/Mrw6ihv5UqDbfL2XKgsmMbV0FaeF5Q=";
-      marker = "85d8b3ce20505f6f05fccaf0ea286fe54a836df2f65ca82c98c6d5d0569e1794";
+      zip = "sha256-IWjxk91Af/YwF3oKNkjolQ10B0aZDxLpMhtmPSbOadw=";
+      marker = "2168f193dd407ff630177a0a3648e8950d740746990f12e9321b663d26ce69dc";
     };
   };
 
   electronZip = fetchurl {
-    url = "https://github.com/zenbu-labs/pixel/releases/download/electron-v${electronVersion}/electron-v${electronVersion}-${electronTarget}.zip";
+    url = "https://github.com/zenbu-labs/terminal-browser/releases/download/electron-v${electronVersion}/electron-v${electronVersion}-${electronTarget}.zip";
     hash = electronHashes.${electronTarget}.zip;
   };
 
@@ -93,10 +93,10 @@ let
     hash = "sha512-LoKJUXNiJ4JM8IIrUltSHI+8pkogaGj5wmJx81jE/Wk3g2w1/kfMbTEKNoY5kitGE8hiC12h32R/1SlywFtxXg==";
   };
 
-  electronTypesSha = "2fe88318975e18ef0da4b95a827a3232f55b02974422dedc812e29442f128d25";
+  electronTypesSha = "4e312097ba7a6c7e1bfd96925ba5ad0352a954915063de02d4115837c9867238";
   electronTypes = fetchurl {
-    url = "https://github.com/zenbu-labs/pixel/releases/download/electron-v${electronVersion}/electron.d.ts";
-    hash = "sha256-L+iDGJdeGO8NpLlagnoyMvVbApdEIt7cgS4pRC8SjSU=";
+    url = "https://github.com/zenbu-labs/terminal-browser/releases/download/electron-v${electronVersion}/electron.d.ts";
+    hash = "sha256-TjEgl7p6bH4b/ZaSW6WtA1KpVJFQY94C1BFYN8mGcjg=";
   };
 
   electronExe =
@@ -114,7 +114,7 @@ stdenv.mkDerivation (finalAttrs: {
     inherit pname version src;
     pnpm = pnpm_10;
     fetcherVersion = 4;
-    hash = "sha256-TfOXh8CuMe+ih6D75rJiU3QCaWYnoMhNOFM9dP5T1S4=";
+    hash = "sha256-hrvEZjI515ULFMvqNTpxjUa9a0x0/RwEcWjC2DUYvIw=";
   };
 
   nativeBuildInputs = [
